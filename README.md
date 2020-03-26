@@ -115,6 +115,10 @@ docker import openwrt-armv7-bpi-m2u-rootfs.tar.gz lean-openwrt
 docker run --restart always -d --network macvlan_lan --privileged --name openwrt lean-openwrt /sbin/init
 docker exec -it 'container id' sh
 vi /etc/config/network
+/etc/init.d/network restart
+```
+<details>
+  <summary>contents of <code>network</code></summary>
 config interface 'lan'
         option type 'bridge'
         option ifname 'eth0'
@@ -122,6 +126,7 @@ config interface 'lan'
         option ipaddr '192.168.1.254'
         option netmask '255.255.255.0'
         option gateway '192.168.1.1'
-/etc/init.d/network restart
-```
+</details>
+
+---
 ## to be continued...
