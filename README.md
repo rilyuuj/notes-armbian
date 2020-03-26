@@ -33,7 +33,7 @@ export DOWNLOAD_URL=https://mirrors.tuna.tsinghua.edu.cn/docker-ce
 sh -c "$(curl -fsSL https://get.docker.com)"
 ```
 docker mirror
-```bash
+```
 tee /etc/docker/daemon.json <<-'EOF'
 {
   "registry-mirrors": [
@@ -53,17 +53,20 @@ docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.
 
 ---
 ## install trojan-client
-```bash
+<detail>
+    <summary>test</summary>
+    
+```
 mkdir /etc/trojan
 cd /etc/trojan/
 get https://raw.githubusercontent.com/trojan-gfw/trojan/master/examples/client.json-example
 mv client.json-example config.json
 vi config.json
-{
+    {
     "run_type": "client",
     "local_addr": "127.0.0.1",
     "local_port": 1080,
-    "remote_addr": "www.myvps.com",
+    "remote_addr": "www.cclimber.tk",
     "remote_port": 443,
     "password": [
         "password1"
@@ -95,10 +98,11 @@ vi config.json
 docker pull teddysun/trojan
 docker run -d --name trojan --restart always --net host -v /etc/trojan/:/etc/trojan teddysun/trojan
 ```
+</details>
 
 ---
 ## import openwrt docker image
-```bash
+```
 modprobe pppoe
 docker network create -d macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.1 -o parent=eth0 macvlan_lan
 docker import openwrt-armv7-bpi-m2u-rootfs.tar.gz lean-openwrt
@@ -114,5 +118,4 @@ config interface 'lan'
         option gateway '192.168.1.1'
 /etc/init.d/network restart
 ```
-
 ## to be continued...
