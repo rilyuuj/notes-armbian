@@ -6,7 +6,7 @@ system configuration
 
 
 
-* ### set apt source
+### set apt source
 
 run with sudo
 ```bash
@@ -19,7 +19,7 @@ EOF
 ```
 
 ---
-* ### set docker source
+### set docker source
 
 run with sudo
 ```
@@ -45,14 +45,14 @@ sudo systemctl restart docker
 ```
 
 ---
-* ### install Docker GUI
+### install Docker GUI
 ```
 docker volume create portainer_data
 docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer:linux-arm
 ```
 
 ---
-* ### install trojan-client   
+### install trojan-client   
 ```
 mkdir /etc/trojan
 cd /etc/trojan/
@@ -61,7 +61,7 @@ mv client.json-example config.json
 vi config.json
 ```
 <details>
-  <summary>expand for <pre>config.json</pre> content</summary>
+  <summary>expand for content <code>config.json</code> </summary>
 	
 ```
       	{
@@ -107,7 +107,7 @@ docker run -d --name trojan --restart always --net host -v /etc/trojan/:/etc/tro
 
 
 ---
-* ### import openwrt docker image
+### import openwrt docker image
 ```
 modprobe pppoe
 docker network create -d macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.1 -o parent=eth0 macvlan_lan
