@@ -19,7 +19,7 @@ EOF
 ```
 
 ---
-### set docker source
+### set docker hub mirror
 
 run with sudo
 ```
@@ -44,11 +44,15 @@ EOF
 sudo systemctl restart docker
 ```
 
-check mirror worked
+check mirror of docker hub worked
 running `docker info` in terminal, if you saw below info then config working.
->Registry Mirrors:
->   https://docker.mirrors.ustc.edu.cn/
-
+>
+```
+ Registry Mirrors:
+  https://docker.mirrors.ustc.edu.cn/
+ Live Restore Enabled: false
+```
+>
 
 ---
 ### install Docker GUI
