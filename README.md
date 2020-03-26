@@ -129,6 +129,7 @@ config interface 'lan'
         option gateway '192.168.1.1'
 ```
 </details>
+
 ```
 /etc/init.d/network restart
 ```
