@@ -115,4 +115,4 @@ config interface 'lan'
 /etc/init.d/network restart
 ```
 
-## continue updateing
+## to be continued...
