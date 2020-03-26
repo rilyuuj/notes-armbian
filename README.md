@@ -54,14 +54,17 @@ docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.
 ---
 ## install trojan-client
 expand the config file    
+`
+mkdir /etc/trojan
+cd /etc/trojan/
+get https://raw.githubusercontent.com/trojan-gfw/trojan/master/examples/client.json-example
+mv client.json-example config.json
+vi config.json
+`
+<details>
+  <summary>expand this for config content</summary>
+	
 ```
-    mkdir /etc/trojan
-    cd /etc/trojan/
-    get https://raw.githubusercontent.com/trojan-gfw/trojan/master/examples/client.json-example
-    mv client.json-example config.json
-    <details>
-      <summary>vi config.json</summary>
-      
       	{
 		"run_type": "client",
 		"local_addr": "127.0.0.1",
@@ -95,10 +98,12 @@ expand the config file
 			"fast_open_qlen": 20
 		}
 	}
-    </details>    
-    docker pull teddysun/trojan
-    docker run -d --name trojan --restart always --net host -v /etc/trojan/:/etc/trojan teddysun/trojan
 ```
+</details>
+`
+docker pull teddysun/trojan
+docker run -d --name trojan --restart always --net host -v /etc/trojan/:/etc/trojan teddysun/trojan
+`
 
 
 ---
