@@ -63,7 +63,7 @@ vi config.json
     "run_type": "client",
     "local_addr": "127.0.0.1",
     "local_port": 1080,
-    "remote_addr": "www.cclimber.tk",
+    "remote_addr": "www.myvps.com",
     "remote_port": 443,
     "password": [
         "password1"
@@ -100,7 +100,7 @@ docker run -d --name trojan --restart always --net host -v /etc/trojan/:/etc/tro
 ## import openwrt docker image
 ```bash
 modprobe pppoe
-docker network create -d macvlan --subnet=192.168.123.0/24 --gateway=192.168.123.1 -o parent=eth0 macvlan_lan
+docker network create -d macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.1 -o parent=eth0 macvlan_lan
 docker import openwrt-armv7-bpi-m2u-rootfs.tar.gz lean-openwrt
 docker run --restart always -d --network macvlan_lan --privileged --name openwrt lean-openwrt /sbin/init
 docker exec -it 'container id' sh
@@ -109,9 +109,9 @@ config interface 'lan'
         option type 'bridge'
         option ifname 'eth0'
         option proto 'static'
-        option ipaddr '192.168.123.254'
+        option ipaddr '192.168.1.254'
         option netmask '255.255.255.0'
-        option gateway '192.168.123.1'
+        option gateway '192.168.1.1'
 /etc/init.d/network restart
 ```
 
