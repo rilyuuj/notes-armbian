@@ -44,6 +44,12 @@ EOF
 sudo systemctl restart docker
 ```
 
+check mirror worked
+running `docker info` in terminal, if you saw below info then config working.
+>Registry Mirrors:
+>   https://docker.mirrors.ustc.edu.cn/
+
+
 ---
 ### install Docker GUI
 ```
