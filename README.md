@@ -6,9 +6,9 @@ system configuration
 
 
 
-## set apt source
+### set apt source
 
-#### run with sudo
+run with sudo
 ```bash
 cat << EOF >> /etc/apt/sources.list
 deb https://mirrors.tuna.tsinghua.edu.cn/debian buster main contrib non-free
@@ -19,9 +19,9 @@ EOF
 ```
 
 ---
-## set docker source
+### set docker source
 
-#### run with sudo
+run with sudo
 ```
 echo "deb [arch=armhf] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian buster stable" | \
     sudo tee /etc/apt/sources.list.d/docker.list
@@ -45,14 +45,14 @@ sudo systemctl restart docker
 ```
 
 ---
-## install Docker GUI
-```bash
+### install Docker GUI
+```
 docker volume create portainer_data
 docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer:linux-arm
 ```
 
 ---
-## * install trojan-client   
+* ### install trojan-client   
 ```
 mkdir /etc/trojan
 cd /etc/trojan/
@@ -61,7 +61,7 @@ mv client.json-example config.json
 vi config.json
 ```
 <details>
-  <summary>expand for `config.json` content</summary>
+  <summary>expand for <q>config.json</q> content</summary>
 	
 ```
       	{
@@ -99,6 +99,7 @@ vi config.json
 	}
 ```
 </details>
+
 ```
 docker pull teddysun/trojan
 docker run -d --name trojan --restart always --net host -v /etc/trojan/:/etc/trojan teddysun/trojan
