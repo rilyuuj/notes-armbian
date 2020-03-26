@@ -52,17 +52,16 @@ docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.
 ```
 
 ---
-## install trojan-client
-expand the config file    
-`
+## * install trojan-client   
+```
 mkdir /etc/trojan
 cd /etc/trojan/
 get https://raw.githubusercontent.com/trojan-gfw/trojan/master/examples/client.json-example
 mv client.json-example config.json
 vi config.json
-`
+```
 <details>
-  <summary>expand this for config content</summary>
+  <summary>expand for `config.json` content</summary>
 	
 ```
       	{
@@ -100,10 +99,10 @@ vi config.json
 	}
 ```
 </details>
-`
+```
 docker pull teddysun/trojan
 docker run -d --name trojan --restart always --net host -v /etc/trojan/:/etc/trojan teddysun/trojan
-`
+```
 
 
 ---
