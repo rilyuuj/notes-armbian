@@ -119,6 +119,7 @@ docker run -d --name trojan --restart always --net host -v /etc/trojan/:/etc/tro
 ---
 ### import openwrt docker image
 ```
+ip link set eth0 promisc on
 modprobe pppoe
 docker network create -d macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.1 -o parent=eth0 macvlan_lan
 docker import openwrt-armv7-bpi-m2u-rootfs.tar.gz lean-openwrt
