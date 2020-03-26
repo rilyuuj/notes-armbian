@@ -9,7 +9,7 @@ system configuration
 ### set apt source
 
 run with sudo
-```bash
+```
 cat << EOF >> /etc/apt/sources.list
 deb https://mirrors.tuna.tsinghua.edu.cn/debian buster main contrib non-free
 deb https://mirrors.tuna.tsinghua.edu.cn/debian buster-updates main contrib non-free
@@ -115,10 +115,10 @@ docker import openwrt-armv7-bpi-m2u-rootfs.tar.gz lean-openwrt
 docker run --restart always -d --network macvlan_lan --privileged --name openwrt lean-openwrt /sbin/init
 docker exec -it 'container id' sh
 vi /etc/config/network
-/etc/init.d/network restart
 ```
 <details>
   <summary>contents of <code>network</code></summary>
+```
 config interface 'lan'
         option type 'bridge'
         option ifname 'eth0'
@@ -126,7 +126,8 @@ config interface 'lan'
         option ipaddr '192.168.1.254'
         option netmask '255.255.255.0'
         option gateway '192.168.1.1'
+```
 </details>
-
+> /etc/init.d/network restart
 ---
 ## to be continued...
