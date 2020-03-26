@@ -1,7 +1,7 @@
 # Armbian something
 note sth with Armbian
 
-## Armbian confirguration
+## Confirguration
 system configuration
 
 
