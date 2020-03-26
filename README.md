@@ -53,7 +53,7 @@ docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.
 
 ---
 ## install trojan-client
-<detail>
+<details>
   <summary>test</summary>    
 
 ```
