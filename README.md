@@ -118,6 +118,7 @@ vi /etc/config/network
 ```
 <details>
   <summary>contents of <code>network</code></summary>
+
 ```
 config interface 'lan'
         option type 'bridge'
@@ -128,6 +129,8 @@ config interface 'lan'
         option gateway '192.168.1.1'
 ```
 </details>
-> /etc/init.d/network restart
+
+>/etc/init.d/network restart
+
 ---
 ## to be continued...
