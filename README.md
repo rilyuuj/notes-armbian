@@ -121,7 +121,7 @@ docker run -d --name trojan --restart always --net host -v /etc/trojan/:/etc/tro
 ```
 ip link set eth0 promisc on
 docker network create -d macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.1 -o parent=eth0 macvlan_lan
-docker import openwrt-armv7-bpi-m2u-rootfs.tar.gz lean-openwrt
+docker import openwrt-armhf-sunxi-rootfs.tar.gz lean-openwrt
 docker run --restart always -d --network macvlan_lan --privileged --name openwrt lean-openwrt /sbin/init
 docker exec -it 'container id' sh
 vi /etc/config/network
