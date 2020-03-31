@@ -26,6 +26,7 @@ run with sudo
 echo "deb [arch=armhf] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian buster stable" | \
     sudo tee /etc/apt/sources.list.d/docker.list
 curl -fsSL https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian/gpg | sudo apt-key add -
+apt-key fingerprint 0EBFCD88
 ```
 setup
 ```
