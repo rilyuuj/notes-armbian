@@ -23,9 +23,10 @@ EOF
 
 run with sudo
 ```
-echo "deb [arch=armhf] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian buster stable" | \
+echo "deb [arch=armhf] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian \
+     $(lsb_release -cs) stable" | \
     sudo tee /etc/apt/sources.list.d/docker.list
-curl -fsSL https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian/gpg | sudo apt-key add -
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 apt-key fingerprint 0EBFCD88
 ```
 setup
@@ -79,10 +80,10 @@ vi config.json
 	"run_type": "client",
 	"local_addr": "127.0.0.1",
 	"local_port": 1080,
-	"remote_addr": "www.cclimber.tk",
+	"remote_addr": "domain.vps",
 	"remote_port": 443,
 	"password": [
-		"password1"
+		"password123"
 	],
 	"log_level": 1,
 	"ssl": {
