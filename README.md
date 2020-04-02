@@ -133,7 +133,7 @@ vi /etc/config/network
 
 ```
 config interface 'lan'
-#        option type 'bridge'		##comment for disable bridge if use openwrt for bypath
+#        option type 'bridge'		// comment for disable bridge if use openwrt for bypath
         option ifname 'eth0'
         option proto 'static'
         option ipaddr '192.168.1.254'
