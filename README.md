@@ -148,6 +148,11 @@ config interface 'lan'
 ```
 /etc/init.d/network restart
 ```
+login openwrt:192.168.1.254 add follow line in Menu Network => Firewall => Custom Rules
+```
+iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE
+```
+
 
 ---
 ## to be continued...
